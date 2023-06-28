@@ -67,18 +67,18 @@ namespace sharpList.Controllers;
             }
         }
 
-        // [HttpPut("{houseId}")]
-        // public ActionResult<House> UpdateHouse(int houseId, [FromBody] House updateData)
-        // {
-        //     try
-        //     {
-        //         updateData.Id = houseId;
-        //         House house = _housesService.UpdateHouse(updateData);
-        //         return Ok(house);
-        //     }
-        //     catch (Exception e)
-        //     {
-        //         return BadRequest(e.Message);
-        //     }
-        // }
+        [HttpPut("{houseId}")]
+        public ActionResult<House> UpdateHouse(int houseId, [FromBody] House updateData)
+        {
+            try
+            {
+                updateData.Id = houseId;
+                House house = _housesService.UpdateHouse(updateData);
+                return Ok(house);
+            }
+            catch (Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
     }

@@ -37,22 +37,22 @@ public class HousesService
     return $"{house.Type} has been deleted.";
   }
 
-  // internal House UpdateHouse(House updateData)
-  // {
-  //   House original = GetById(updateData.Id);
-  //   // TODO check if you are authorized to do this
+  internal House UpdateHouse(House updateData)
+  {
+    House original = GetById(updateData.Id);
+    // TODO check if you are authorized to do this
 
-  //   original.Address = updateData.Address != null ? updateData.Address : original.Address;
-  //   original.Type = updateData.Type != null ? updateData.Type : original.Type;
-  //   original.Price = updateData.Price != null ? updateData.Price : original.Price;
-  //   original.Year = updateData.Year != null ? updateData.Year : original.Year;
-  //   original.Bedrooms = updateData.Bedrooms != null ? updateData.Bedrooms : original.Bedrooms;
-  //   original.Bathrooms = updateData.Bathrooms != null ? updateData.Bathrooms : original.Bathrooms;
-  //   original.Levels = updateData.Levels != null ? updateData.Levels : original.Levels;
-  //   original.imgUrl = updateData.imgUrl != null ? updateData.imgUrl : original.imgUrl;
-  //   original.Description = updateData.Description != null ? updateData.Description : original.Description;
+    original.Address = updateData.Address != null ? updateData.Address : original.Address;
+    original.Type = updateData.Type != null ? updateData.Type : original.Type;
+    original.Price = updateData.Price != null ? updateData.Price : original.Price;
+    original.Year = updateData.Year != null ? updateData.Year : original.Year;
+    original.Bedrooms = updateData.Bedrooms != null ? updateData.Bedrooms : original.Bedrooms;
+    original.Bathrooms = updateData.Bathrooms != null ? updateData.Bathrooms : original.Bathrooms;
+    original.Levels = updateData.Levels != null ? updateData.Levels : original.Levels;
+    original.imgUrl = updateData.imgUrl != null ? updateData.imgUrl : original.imgUrl;
+    original.Description = updateData.Description != null ? updateData.Description : original.Description;
 
-  //   _repo.UpdateHouse(original);
-  //   return original;
-  // }
+    _repo.UpdateHouse(original);
+    return original;
+  }
 }

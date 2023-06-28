@@ -164,4 +164,79 @@ SELECT * FROM houses WHERE id = LAST_INSERT_ID();
 
 SELECT * FROM houses ORDER BY `createdAt` DESC;
 
-SELECT * FROM houses WHERE price < 10000000 ORDER BY price DESC;
+SELECT * FROM houses WHERE price <= 10000000 ORDER BY price DESC;
+
+SELECT * FROM houses WHERE price <= 10000000 ORDER BY price ASC LIMIT 1, 100;
+
+SELECT * FROM houses WHERE id = 100;
+
+-- SECTION JOBS
+
+CREATE TABLE jobs(
+  id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  company VARCHAR(250) NOT NULL,
+  jobTitle VARCHAR(250) NOT NULL,
+  jobType VARCHAR(250) NOT NULL,
+  imgUrl VARCHAR(500),
+  location VARCHAR(250) NOT NULL,
+  description VARCHAR(5000),
+  rate DOUBLE NOT NULL DEFAULT 1.00,
+  benefits VARCHAR(5000),
+  hours INT NOT NULL DEFAULT 40,
+  requirements VARCHAR(10000),
+  contact VARCHAR(5000),
+
+  createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
+  updatedAt DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP 
+)  default charset utf8 COMMENT '';
+
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+VALUES
+('Google', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Mountain View, CA', 'We are looking for a software engineer to join our team. You will be working on the next generation of Google products.', 100000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',
+'');
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+VALUES
+('Apple', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Cupertino, CA', 'We are looking for a software engineer to join our team. You will be working on the next generation of Apple products.', 100000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',
+'');
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Microsoft', 'Senior Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Redmond, WA', 'We are looking for a software engineer to join our team. You will be working on the next generation of Microsoft products.', 200000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field. Comfortable with Azure and Cloud service development.',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Amazon', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Seattle, WA', 'We are looking for a software engineer to join our team. You will be working on the next generation of Amazon products.', 150000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('OpenAI', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'San Francisco, CA', 'We are looking for a software engineer to join our team. You will be working on the next generation of OpenAI products.', 250000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('SpaceX', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Hawthorne, CA', 'We are looking for a software engineer to join our team. You will be working on the next generation of SpaceX products.', 500000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Santa Monica Studio', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Santa Monica, CA', 'We are looking for a software engineer to join our team. You will be involved in creating the newest God of War VR game that is currently deep under production.', 100000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field. Knowledge of CSharp at the very least, along with the ability to quickly adapt into C++ during a probational training period.',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Sony', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'San Diego, CA', 'We are looking for a software engineer to join our team. You will be working on the next generation of Sony products.', 100000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Gearbox', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Frisco, TX', 'We are looking for a software engineer to join our team. You will be working on the newest Borderlands game that is currently deep under production.', 100000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field. Knowledge of CSharp at the very least, along with the ability to quickly adapt into C++ during a probational training period.',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Epic Games', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Cary, NC', 'We are looking for a software engineer to join our team. You will be working on the next generation of Epic Games products.', 100000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Ubisoft', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Montreal, Canada', 'We are looking for a software engineer to join our team. You will be working on the next generation of Ubisoft products.', 100000, 'Health, Dental, Vision, 401k', 40, 'Bachelors Degree in Computer Science or related field',);
+INSERT INTO jobs
+(company, jobTitle, jobType, imgUrl, location, description, rate, benefits, hours, requirements, contact)
+('Seeking developer to create a new gaming social media platform', 'Software Engineer', 'Full Time', 'https://placehold.it/200x200', 'Remote', 'Want to be part of something revolutionary for the gaming community? Want to win raffles from sponsoring the worlds best gamers on any and every console? Join our team in compiling what is already started into the reality it is meant to be!', 100000, 'Health, Dental, Vision, 401k, Quick Growing Company with immense opportunity for advancement, required 10 weeks off per year excluding all Holidays.', 40, 'Bachelors Degree in Computer Science or related field',);
+
+SELECT * FROM jobs WHERE id = LAST_INSERT_ID();
+
+SELECT * FROM jobs ORDER BY `createdAt` DESC;
+
+SELECT * FROM jobs WHERE rate <= 100000 ORDER BY rate DESC;
+
+SELECT * FROM jobs WHERE rate <= 100000 ORDER BY rate ASC LIMIT 1, 100;
+
+SELECT * FROM jobs WHERE id = 100;

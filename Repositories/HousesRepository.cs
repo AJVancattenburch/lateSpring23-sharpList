@@ -45,20 +45,20 @@ public class HousesRepository
     return rows;
   }
 
-  // internal void UpdateHouse(House updateData)
-  // {
-  //   string sql = @"
-  //   UPDATE houses SET
-  //   address = @address,
-  //   price = @price,
-  //   type = @type,
-  //   year = @year,
-  //   bedrooms = @bedrooms,
-  //   bathrooms = @bathrooms,
-  //   levels = @levels,
-  //   imgUrl = @imgUrl,
-  //   description = @description
-  //   WHERE id = @id;";
-  //   _db.Execute(sql, updateData);
-  // }
+  internal void UpdateHouse(House updateData)
+  {
+    string sql = @"
+    UPDATE houses SET
+    address = @address,
+    price = @price,
+    type = @type,
+    year = @year,
+    bedrooms = @bedrooms,
+    bathrooms = @bathrooms,
+    levels = @levels,
+    imgUrl = @imgUrl,
+    description = @description
+    WHERE id = @id;";
+    _db.Execute(sql, updateData);
+  }
 }
